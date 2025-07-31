@@ -5,7 +5,10 @@ const usuario = z.object({
     numeroTelefone: z.string("Número de telefone deve ser uma string").trim(),
     endereco: z.string("Endereço deve ser uma string").trim(),
     email: z.email("Email inválido"),
-    password: z.string("Sua senha deve ser uma string"),
+    password: z.string("Sua senha deve ser uma string")
+    .min(8, {message: "A senha deve ter no mínimo 8 caracteres"})
+    .regex(/[A-z]/, {message: "A senha deve conter ao menos uma letra"})
+    .regex(/\d/, "A senha deve conter ao menos um número"),
     isVendedor: z.boolean("isVendedor deve ser um boolean")
 })
 

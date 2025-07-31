@@ -6,6 +6,7 @@ import UsuarioValidator from "../config/UsuarioValidator"
 import ProdutoValidator from "../config/ProdutoValidator"
 import passport from "passport"
 import { isVendedor } from "../middlewares/VendedorMiddleware"
+import { photoUpload } from "../config/uploader"
 
 const router = Router()
 
@@ -34,5 +35,7 @@ router.get("/produtos", ProdutoController.readAllProdutos)
 router.put("/produto/:produtoId", validateBody(ProdutoValidator.updateProduto), validateParams(ProdutoValidator.produtoParams), passport.authenticate("jwt", { session: false }),ProdutoController.updateProduto)
 
 router.delete("/produto/:produtoId", validateParams(ProdutoValidator.produtoParams), passport.authenticate("jwt", { session: false }), ProdutoController.deleteProduto)
+
+router.post("/produto/img", photoUpload.single("image"))
 
 export default router
