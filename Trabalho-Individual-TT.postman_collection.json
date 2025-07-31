@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "3b6fa24b-c538-43eb-beb3-d51de7dae562",
+		"name": "Trabalho-Individual-TT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46816164"
+	},
+	"item": [
+		{
+			"name": "Criar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCompleto\": \"Pedro Luiz Abreu\",\r\n    \"numeroTelefone\": \"(21)123456789\",\r\n    \"endereco\": \"rua do glorioso, rio de janeiro\",\r\n    \"email\": \"pedroabreu@gmail.com\",\r\n    \"password\": \"Px578\",\r\n    \"isVendedor\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/cadastro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"cadastro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ler Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ODFiNGU3OC1mNjc0LTQ4MzYtYjExZS01ZmJkODVjYjZlOWIiLCJpYXQiOjE3NTM5OTE2OTUsImV4cCI6MTc1Mzk5MjI5NX0.V-sfKTzyyrkd02o_Th0Ozo6eYf5ajOB-3ldxzFE3wwVIUDkebDhrjNjNqzzR_i_-i0Y4dzKM-QCrMh4bvCsrkamb8xS2vQBeHODtDvJY-oezAN9Vhyi4BQL-_zImIL7e9QHrdTgXSFk30lNQJp0heK4iZoONlxDNMy0CN1qnKl-FdL7MRxnmLS7p9cwanri2EKk7GkEvK0PetcEGWftiBLqXq8lQoTtCoFfB7wVJ-TroEn2WfLwSMmd5IethV9y_TRINDb3wmeUGl-ddNuDirvjG-UoB9SJWV11DO812MBMotFUp06cBwLMcECLWDzisvUlJPbO0sGfahjwhQLkKzk0Aajy_xMZxyEaHV63ruxNUDr16YYp70kLw_Cb2n2R86WR8fN5I66BjVJAhXn9MetDFH7pO4Fi_akJSmkkbBkjUYPEjeLEC1cWXcXWBL13U5KW_ZhMlT9mStj0Gl9F987P3rO8-torhRpsQDobXVtGUbQrfwnaREwVJqj6JJ-_jr7g3RVB2NBKHBsZXZ4DpFLAw5bMbMwFo_Q7EzwPXinoBsOy3CvV234805i_HjtHkfVL6wAgXJDRr0ZaDJQP84Vk9svzDxgqe0JY34znm5htplv5MgRS82KF-u7FR7esKTLpt8aVE8v4-vtZTpUH6aw9Qks_rsgbq37tZicqwxQ0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ler Usuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ODFiNGU3OC1mNjc0LTQ4MzYtYjExZS01ZmJkODVjYjZlOWIiLCJpYXQiOjE3NTM5OTExNjksImV4cCI6MTc1Mzk5MTc2OX0.ro5LZMKm9xJXL_x6WlWkBNc8ssaN1IdvRqdwuoVw7AIjDIfqLtEXNd5O3EkW-WcscAtdWoD6VsglgXjlPQ-OIe1jdo1UZoRuFCc4ZdLNDofR4XitkXmNQKkVxPklMiLpArUTJE7aszqqtopL8hZSfeh5yhvwQnXq9qbldHstWZ5mwpKTp2FTZwgkzoMJ16rkpcBSBD9ktjqw3OUwWPPvEeHEisGnxXAySmTwjMT82isCJ2HnxKtY9uYte56U6e6muIkkx1oorTumnd0n1nqKBGonr7puzt-ZjCNU0-ySvNJFN1Bk2Z4-W5rxsk1C9DK9x9H9p13mAPbfsizo0kl1SUl54o3e3AI7ODSJF7UtQUCx0PXEy6q4phtMMKwNVRzQ0Zgk6KnDFL1vEqD7P9b35ReW8yhqk-ekgz9PffpYd8sVrsi1xaCgF9rSwu_lwXwlBTecHtrgnTsQq4Qzn1G_Flwl9GL1Q6COGHQDm4l7sjvfzJteV08Sg61n0_M2m4B4nnQtLrm4cdl-L3a_563XrL_Y-XSOPRQX4BihUELCweTlMuGAXkYzVGqPcwGHgaqSxmdgZX25iUdhitPyIfOTUwuRYjTwzW-K1vUXWpF0zUBz0VYCvuPLgjtoXSnw2-JYJjyu0an5aapL1w06Sxd4IVTdLQpXfodOwGZVZ0HRPVk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3333/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NmU2YzhmNy02OGYwLTRjNjUtYTAzZS1mZDIzOWIyYmQ5YzAiLCJpYXQiOjE3NTM5OTM0ODQsImV4cCI6MTc1Mzk5NDA4NH0.z7QC26JGGltTj2WMcea3eIJW5-pRVKA0CbPZwyJ0Dsx8DaRb89hjs7FBiOuoRfSB8IIop8pENa0OUaumhZ1LRdXYgMpeqyxMIs4WuIVzKXzLfIBdAUMrRagbNguqGjY_ELEzzNWOtEeI98VuWoiF5_Vj4QQulYFCSXrEYjr2NsDEBErZfetDvWVw1nSx9FrYRRZijJhBsJwNUrymUOB95yd2etdRz-hfJ6A4LITS3cPply9nNRzci53whFWZDcsMP8VcaIWKDT7smaMGRc4k4tW-sWnS7pF88tzanl-bZrZg49XKJ66STRfmXucDek3g5bxmmmc98EDKm1flgLbOavaLZOdb4J-W51OuiONr0LEYNq2H1bMEUc62dt_PCdiXLekBCe2LYN1MYGhFlBq43Md8W29ZPxmQqPsxpuvoT41bhYPHqqgwi46p5_BMgmm92B2a24TmlYhBdnYdHUZCoXj1-YMT1SkvANh1K-1kCLjx0KC5F3Uf43YQRRe300Dk18X3HpdhFZ1HgOsfCl-vgHC8RJz9uAEsT8xe38R2ayv9jo5O4XB-LIiHQPtMvvPFbQL-WekC7xWbsi7-_kdTofOG2aPYRMztWqdXnznhfmuYr5J8gb39PAy4D-oyjdr8qOBa0rgTGdNB54BxQ2722prg-kI2FU7o6_ivRTMf1zg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isVendedor\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3YTM3MjY5NC1mZTVkLTQ1NWYtYmQ5MC04ODYzNmJkNzNhMTgiLCJpYXQiOjE3NTM5OTAzMzMsImV4cCI6MTc1Mzk5MDkzM30.jhHDA9KpLwUoyJ5jl09oyYqmG2h_wshvmY_dHjk8R440iCqxCPCcvrGCXCVZOMN1zbiYb6bR9XUn2DKEmaeAQEab2laehxZ053eTcULh8Yq_mKKJNNPyj7VJTS5xoDjV1d3qsHbasRKHA26ex1j-8erXQh2LBeANMat_Y2jIBKsEszDB3DeUQshFDl1IKirZnVZtWORicm3vRE2i0c377J23lHcyVmUbHHE7NfTIPjxETlTqjEWQvQAk_MIdUU06SZ1ATFlNeVEVYu5GAuLcsi_gEVXsCOe3FxPUqXI-BajSlXUSBZ1NealIItr4fRHCwkHQVmIyv4I1iA7Slgf3Pz_2lMtKxQpvc17PyXLV1kkN9YV7ykuOreetzgeUUcLuSt-PzPJ44Kse8vH4M-kLupd4pPA1i3R5TFRLToVzAs5GU52CMq0mI1lTtmDsjaG-BSZNO95SwUN217xqBYJyFWxOrbrXgbdlDFoUWqO7RsBpg8ikImWzpgmSrCHqCOdbv5d-SH9oQ5W3ohjbkXKFmYdRlS1RlDJlsUOeSYYIY9KynnkB048vLYS8dM_AkmYmj7Zovt8d_R5Xb2Va33CAV4V4yS6BGQMkCI4SaPCBI_EoePsK7pK_Pf2da1643K39agYIR1gSc8j7Kred85eBVKbbWQgvfmg2zkOOjUf0sIc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pedroabreu@gmail.com\",\r\n    \"password\": \"Px578\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Produto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NmU2YzhmNy02OGYwLTRjNjUtYTAzZS1mZDIzOWIyYmQ5YzAiLCJpYXQiOjE3NTM5OTQxMDksImV4cCI6MTc1Mzk5NDcwOX0.J9WNzRxvRnRDb58Kf0X7muCSQKoo41r1NT-y3bN8EJjJLjcO-eJM9CtH5PLGqZGDyCbXBwn2OsZFkyMTl3DWHvUkDhj1a5m65vKYg4edJ-61BKkXLGEXazW59hyuIDkhHhACfIp0iC6fjzALeV57Y3fyJeLequOteX68wkfKz98XmXbWz3zc8O4W7iuLflhNLsJpoO0lnI0oGh7R9G09Z9Rmz_OIifLru4QFSrJTAidpm-S0Me77KPU29Gn8JdmLYLQNZ2fMBm-IMWyTaI-SjVareP44K9aGjyoPf7gCdpPBjIMA4xdk-CAOHJvN5uZ1d5oVI_U1yVNoaAxvEqom4vePYnwxzwSf4mJK6uLNdKy7b6_igUcS8IMBLTyVNt0fCoYWohcEA6exjRO23IoWUnJiZ0-fkEcFw3pKkLaaebJuc_5uoT5GERtlf1zbuzOtKnUURpNm3m1sZi0iADu2z8VKjSFltcXGr_Hr5-YJrinqxc8OICdQYtxVm0OPCbgZbeLfFRvjcB5g046aiAjpkFT7Yq20yF9gYsv0bGHq1Vgr_ypL1dBF0QRfYItTI5E5FL1ygL4a9bq91Gq8Tw5bhn9Vxsb_bBmNaq-cmx6XNrI9qdkuX3JUnBKMQXyjwq6DAylpkQleF1e_cLgnQTj4m6tFgFaebwIHxdup61BnCNc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"modelo\": \"Galaxy Book 80\",\r\n    \"dataFabricacao\": \"2025-07-30\",\r\n    \"condicao\": \"Usado\",\r\n    \"status\": \"Disponivel\",\r\n    \"preco\": 900000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ler Produto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3333/produto/adc2818a-e67d-418b-93fc-894976f8c7b8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"produto",
+						"adc2818a-e67d-418b-93fc-894976f8c7b8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ler Produtos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3333/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Produto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ODFiNGU3OC1mNjc0LTQ4MzYtYjExZS01ZmJkODVjYjZlOWIiLCJpYXQiOjE3NTM5OTI4NjcsImV4cCI6MTc1Mzk5MzQ2N30.yS9nNanpRrUMOR-AlO30Tk8nLpKQ36clbzvZ4yYTHxOrDJfI8R453e_2Rij2Ec1adUVTrSqWxBFo120PboLZHUjKypWcYgD98LmddjV9mjmC0xY64llThOylQHd2HOYp7FymhhF6Syt6vDnwYKYvat0IF9VLkAWoUo6cviJ-KiA5DDdzJVpxOOpQnUYPPRtYtiXlXK8D5drsXtlMAZvnzuUsSZnuT0gbMpy7rsLL21hL_5G8C1q6zI_Oq-u9xHsSAszLDD8HXOCEvUiUwA1IvVYZpP45P5yZwimOrxDJlfaCQ6Ge5-zDp9vTyW9b-rveIkKByoB250IyqjwQ9RsFzl8szgqNo1d5CdOGgsps4YlQbJgWnPjO9MKufU-2MI76sq4zdXZIEovkwCuTuD5Boq0jPqv7RO4HoRJzCIpQc7nc16WK_sGnX4PVoKlDYNbLVyscMuiaVtVpO0RNbM6sZil0A-n7Xq6dHpFG9a7AM7vWJHoKCWr6tHqIhwwgmUKbwaUeIBwhF2Oo82dRMFtvDesd0195Fe9rbrQKlJjAhANrkhagQhOH6LuAdWl3Uycyqx5Kk2ldzN1B2-9N8lGCW_R0RCacRuS_KbEYSVNvGQYwtgTKP0CXExnWBZq_mjhnKKhn6bqoEq95HjbVlfnhBS2DuSpOtY90d7SvbYG3qEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"modelo\": \"Iphone500\",\r\n    \"dataFabricacao\": \"2025-07-30T20:03:43.123Z\",\r\n    \"condicao\": \"Usado\",\r\n    \"status\": \"Disponivel\",\r\n    \"preco\": 1.27\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3333/produto/adc2818a-e67d-418b-93fc-894976f8c7b8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"produto",
+						"adc2818a-e67d-418b-93fc-894976f8c7b8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Produto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ODFiNGU3OC1mNjc0LTQ4MzYtYjExZS01ZmJkODVjYjZlOWIiLCJpYXQiOjE3NTM5OTI4NjcsImV4cCI6MTc1Mzk5MzQ2N30.yS9nNanpRrUMOR-AlO30Tk8nLpKQ36clbzvZ4yYTHxOrDJfI8R453e_2Rij2Ec1adUVTrSqWxBFo120PboLZHUjKypWcYgD98LmddjV9mjmC0xY64llThOylQHd2HOYp7FymhhF6Syt6vDnwYKYvat0IF9VLkAWoUo6cviJ-KiA5DDdzJVpxOOpQnUYPPRtYtiXlXK8D5drsXtlMAZvnzuUsSZnuT0gbMpy7rsLL21hL_5G8C1q6zI_Oq-u9xHsSAszLDD8HXOCEvUiUwA1IvVYZpP45P5yZwimOrxDJlfaCQ6Ge5-zDp9vTyW9b-rveIkKByoB250IyqjwQ9RsFzl8szgqNo1d5CdOGgsps4YlQbJgWnPjO9MKufU-2MI76sq4zdXZIEovkwCuTuD5Boq0jPqv7RO4HoRJzCIpQc7nc16WK_sGnX4PVoKlDYNbLVyscMuiaVtVpO0RNbM6sZil0A-n7Xq6dHpFG9a7AM7vWJHoKCWr6tHqIhwwgmUKbwaUeIBwhF2Oo82dRMFtvDesd0195Fe9rbrQKlJjAhANrkhagQhOH6LuAdWl3Uycyqx5Kk2ldzN1B2-9N8lGCW_R0RCacRuS_KbEYSVNvGQYwtgTKP0CXExnWBZq_mjhnKKhn6bqoEq95HjbVlfnhBS2DuSpOtY90d7SvbYG3qEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3333/produto/adc2818a-e67d-418b-93fc-894976f8c7b8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"produto",
+						"adc2818a-e67d-418b-93fc-894976f8c7b8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
